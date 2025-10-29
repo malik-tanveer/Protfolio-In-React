@@ -4,74 +4,83 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Home() {
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
-    }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
+  }, []);
 
-    const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = "/Tanveer (1).pdf";
-        link.download = "resume.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Tanveer-FullStack-Resume.pdf";
+    link.download = "Malik-Tanveer-FullStack-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-    return (
-        <div className="home-container p-40 flex flex-col md:flex-row items-center justify-center px-8 bg-[#0a0f1a] relative">
+  return (
+    <div className="home-container py-32 flex flex-col md:flex-row items-center justify-center px-8 bg-[#050b17] relative overflow-hidden">
 
-            {/* Background Glow Effect */}
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-900 to-purple-900 opacity-20 blur-3xl"></div>
+      {/* Glowing Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#050b17] to-[#001a1a]/60 opacity-80"></div>
 
-            {/* Left Side - Text Content */}
-            <div className="md:w-1/2 text-center z-10" data-aos="fade-right">
-                <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 leading-tight">
-                    Hi, I'm <TypeAnimation
-                        sequence={["Tanveer", 1200, "", 500]}
-                        wrapper="span"
-                        speed={50}
-                        className="text-yellow-400 font-bold"
-                        repeat={Infinity}
-                    />
-                    <br />
-                    A MERN Stack Web Developer
-                </h1>
-                <p className="mt-4 text-lg text-gray-300">
-                    Elevating Web Experiences with Innovation & Aesthetics
-                </p>
+      {/* Left Side - Text Section */}
+      <div className="md:w-1/2 text-center md:text-left z-10" data-aos="fade-right">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-green-400 to-pink-400 leading-tight drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+          Hi, I'm{" "}
+          <TypeAnimation
+            sequence={[
+              "Tanveer ", 1500,
+              "a Full Stack Developer", 1500,
+              "a MERN Specialist", 1500,
+              "a Creative Coder ", 1500,
+            ]}
+            wrapper="span"
+            speed={50}
+            className="text-[#7fff00] font-bold"
+            repeat={Infinity}
+          />
+        </h1>
 
-                {/* Buttons */}
-                <div className="flex flex-col md:flex-row gap-6 mt-6 justify-center items-center">
-                    <button
-                        onClick={handleDownload}
-                        className="relative px-6 py-3 font-semibold text-white bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-110"
-                        data-aos="zoom-in"
-                    >
-                        Download Resume
-                    </button>
-                    <button
-                        className="relative px-6 py-3 font-semibold text-white border-2 border-teal-400 rounded-lg shadow-md transition-all duration-300 hover:bg-teal-400 hover:text-black"
-                        data-aos="zoom-in"
-                    >
-                        <a href="#contact">Contact Me</a>
-                    </button>
-                </div>
-            </div>
+        <p className="mt-5 text-lg text-gray-300 max-w-lg">
+          Passionate about building high-performance web apps with modern technologies — from crafting interactive UIs to designing scalable backends.
+          <br />
+          <span className="text-cyan-400 font-semibold">React</span>, <span className="text-green-400 font-semibold">Node.js</span>, and <span className="text-pink-400 font-semibold">MongoDB</span> are my playground.
+        </p>
 
-            {/* Right Side - Profile Image */}
-            <div className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative z-10" data-aos="fade-left">
-                <div className="mb-5 relative w-90 h-80 rounded-full overflow-hidden shadow-2xl shadow-cyan-500 border-4 border-transparent hover:border-pink-500 transition-all duration-300">
-                    <img
-                        src="WhatsApp Image 2025-01-01 at 21.14.04_da6a6a10.jpg"
-                        alt="Profile"
-                        className="w-full h-full "
-                    />
-                    {/* Glowing Border Animation */}
-                    <div className="absolute inset-0 w-full h-full border-4 border-transparent rounded-full animate-pulse"></div>
-                </div>
-            </div>
+        {/* Buttons */}
+        <div className="flex flex-col md:flex-row gap-6 mt-8 justify-center md:justify-start">
+          <button
+            onClick={handleDownload}
+            className="px-6 py-3 font-semibold text-black bg-gradient-to-r from-[#00b4d8] to-[#7fff00] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            data-aos="zoom-in"
+          >
+            Download Resume
+          </button>
+
+          <button
+            className="px-6 py-3 font-semibold text-white border-2 border-[#00b4d8] rounded-lg hover:bg-[#00b4d8] hover:text-black transition-all duration-300"
+            data-aos="zoom-in"
+          >
+            <a href="#contact">Let's Collaborate</a>
+          </button>
         </div>
-    );
+      </div>
+
+      {/* Right Side - Profile Image */}
+      <div className="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-10" data-aos="fade-left">
+        <div className="relative w-80 h-80 rounded-full overflow-hidden border-[3px] border-[#00b4d8] shadow-[0_0_50px_rgba(0,180,216,0.4)] hover:shadow-[0_0_70px_rgba(127,255,0,0.6)] transition-all duration-500">
+          <img
+            src="197722550.jfif"
+            alt="Malik Tanveer - Full Stack Developer"
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+
+        {/* Neon Glow Effect */}
+        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full opacity-10 blur-3xl animate-pulse"></div>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

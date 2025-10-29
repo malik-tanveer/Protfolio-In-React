@@ -1,122 +1,124 @@
-import { TypeAnimation } from "react-type-animation";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaHtml5 } from "react-icons/fa";
 
-interface Skill {
-    name: string;
-    image: string;
-}
+function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
+  }, []);
 
-const skills: Skill[] = [
-    { name: "HTML", image: "html-1.svg" },
-    { name: "CSS", image: "css-3.svg" },
-    { name: "JavaScript", image: "javascript-1.svg" },
-    { name: "Git", image: "git-icon.svg" },
-    { name: "React.js", image: "react-2.svg" },
-    { name: "Bootstrap", image: "bootstrap-5-1.svg" },
-    { name: "TypeScript", image: "typescript.svg" },
-    { name: "Tailwind CSS", image: "tailwindcss.svg" },
-    { name: "PHP", image: "PHP-logo.svg" },
-    { name: "Node.js", image: "nodejs-icon.svg" },
-    { name: "Express.js", image: "expresspng.png" },
-    { name: "MongoDB", image: "mongodb-icon-1.svg" },
-    { name: "Postman", image: "postman.svg" },
-    { name: "JWT Auth", image: "pic_logo.svg" },
-];
-// imports remain same
+  return (
+    <div
+      className="about-container py-32 px-8 bg-[#0b0f17] relative overflow-hidden"
+      id="about"
+    >
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#0b0f17] to-[#001a1a]/60 opacity-80"></div>
 
-const About: React.FC = () => {
-    const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-
-    useEffect(() => {
-        AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-    }, []);
-
-    return (
-        <div
-            className="about-container min-h-screen flex flex-col md:flex-row items-center justify-center px-8 bg-[#0a0f1a] relative"
-            data-aos="fade-up"
-        >
-
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-900 to-purple-900 opacity-20 blur-3xl"></div>
-
-            {/* Left Side - Text Content */}
-            <div
-                className="md:w-1/2 grid place-items-center z-10"
-                data-aos="fade-right"
-            >
-                <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 leading-tight">
-                    About
-                    <TypeAnimation
-                        sequence={[" Me", 1200, "", 500]}
-                        wrapper="span"
-                        speed={50}
-                        className="text-yellow-400 font-bold"
-                        repeat={Infinity}
-                    />
-                </h1>
-                <p
-                    className="text-center text-xl text-white mt-5 w-3/4"
-                    data-aos="fade-left"
-                >
-                    Hi, I’m Tanveer, a MERN Stack Developer skilled in building full-stack
-                    web apps using MongoDB, Express, React, and Node.js. I create
-                    responsive UIs, build powerful APIs, and design scalable databases. I
-                    enjoy solving problems and delivering smooth user experiences.
-                </p>
-            </div>
-
-            {/* Right Side - Skills Grid */}
-            <div
-                className="md:w-1/2 flex flex-col items-center mt-10 md:mt-0 relative z-10"
-                data-aos="zoom-in"
-            >
-                {/* 🔥 Wrapper added to center last row */}
-                <div className="flex justify-center">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl px-4 justify-items-center">
-                        {skills.map((skill, index) => (
-                            <div
-                                key={index}
-                                onMouseEnter={() => setHoveredSkill(skill.name)}
-                                onMouseLeave={() => setHoveredSkill(null)}
-                                onClick={() => setSelectedSkill(skill.name)}
-                                className={`relative flex flex-col items-center justify-center p-6 h-28 w-28 rounded-2xl transition-all cursor-pointer ${selectedSkill === skill.name
-                                    ? " bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg shadow-blue-500/50 scale-105 border-2 border-transparent"
-                                    : " bg-black border-2 border-gray-600 hover:border-transparent hover:bg-gradient-to-br hover:from-blue-500 hover:to-purple-500 hover:shadow-lg hover:shadow-blue-500/50"
-                                    }`}
-                                data-aos="flip-left"
-                            >
-                                <img src={skill.image} alt={skill.name} className="w-12 h-12" />
-
-                                {/* Hover Text */}
-                                <span
-                                    className={`absolute bottom-0 mb-2 text-white text-sm font-semibold px-2 py-1 bg-black bg-opacity-75 rounded transition-opacity duration-300 ${hoveredSkill === skill.name
-                                        ? "opacity-100 translate-y-2"
-                                        : "opacity-0"
-                                        }`}
-                                >
-                                    {skill.name}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Selected Skill Display */}
-                {selectedSkill && (
-                    <div
-                        className="mt-6 text-lg font-semibold text-white px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md shadow-lg"
-                        data-aos="fade-up"
-                    >
-                        Selected Skill: {selectedSkill}
-                    </div>
-                )}
-            </div>
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12">
+        {/* Left - Image */}
+        <div className="md:w-1/2 flex justify-center" data-aos="fade-right">
+          <div className="relative w-72 h-72 rounded-full overflow-hidden border-[3px] border-[#00b4d8] shadow-[0_0_40px_rgba(0,180,216,0.4)] hover:shadow-[0_0_60px_rgba(127,255,0,0.5)] transition-all duration-500">
+            <img
+              src="197722550.jfif"
+              alt="Tanveer"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
-    );
-};
+
+        {/* Right - Text */}
+        <div className="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+          <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] mb-6 drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+            About Me
+          </h2>
+
+          <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            I'm <span className="text-[#7fff00] font-semibold">Tanveer</span>, a
+            passionate{" "}
+            <span className="text-[#00b4d8] font-semibold">
+              Full Stack MERN Developer
+            </span>{" "}
+            who loves turning complex problems into elegant, scalable digital
+            solutions. From designing stunning interfaces to building secure,
+            high-performance backends — I strive to deliver impactful web
+            experiences that connect technology with creativity.
+          </p>
+
+          {/* Core Expertise */}
+          <div className="mt-10">
+            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] mb-4">
+              Core Expertise
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Building responsive UIs, real-time APIs, authentication systems,
+              and RESTful services with modern technologies.
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              {[
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "TypeScript",
+                "React.js",
+                "React Native",
+                "Next.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "MySQL",
+                "Firebase",
+                "PHP",
+                "Java",
+                "Tailwind CSS",
+                "Sass",
+                "Bootstrap",
+                "Postman",
+                "Git & GitHub",
+                "Figma",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-[#001a1a]/60 text-[#7fff00] border border-[#00b4d8]/40 rounded-lg shadow hover:shadow-[0_0_15px_rgba(127,255,0,0.3)] hover:scale-105 transition-all duration-300 text-sm font-semibold"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Databases */}
+          <div className="mt-10">
+            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] mb-3">
+              Databases
+            </h3>
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+              {["MongoDB", "MySQL", "SQLite3"].map((db) => (
+                <span
+                  key={db}
+                  className="px-4 py-1 bg-[#001a1a]/60 text-[#00b4d8] border border-[#7fff00]/40 rounded-lg hover:shadow-[0_0_15px_rgba(0,255,200,0.3)] hover:scale-105 transition-all duration-300 font-semibold"
+                >
+                  {db}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Professional Goals */}
+          <div className="mt-10">
+            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7fff00] to-[#00b4d8] mb-4">
+              Professional Goals
+            </h3>
+            <p className="text-gray-400 leading-relaxed">
+              My mission is to create modern digital solutions that blend
+              performance, innovation, and aesthetics — pushing the boundaries
+              of what’s possible in web development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default About;

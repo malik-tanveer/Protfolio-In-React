@@ -3,106 +3,120 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 interface ProjectItem {
-    title: string;
-    description: string;
-    imageUrl: string;
-    altText: string;
-    click: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  altText: string;
+  click: string;
 }
+
 const projects: ProjectItem[] = [
-    {
-        title: "AI Web Application",
-        description:
-            "Bootpress is a Web app built using React.js, Tailwind CSS, and Bootstrap, with Firebase Authentication for secure Google sign-in. It combines modern AI technologies with access control. Soon, it will integrate an AI system allowing users to interact with AI-generated content directly within the app.",
-        imageUrl: "AI.jpg",
-        altText: "AI Web Application",
-        click: "https://bootpress-ai.vercel.app/"
-    },
-    {
-        title: "E-Commerce Platform - SkyMart",
-        description:
-            "One of the projects I worked on during my internship was SkyMart—an e-commerce website built with React, Tailwind CSS, and Bootstrap. It enables users to browse products, add them to their cart, and save their favorites.",
-        imageUrl: "skymart.png",
-        altText: "E-Commerce Platform",
-        click: "https://skytechmart.netlify.app/"
-    },
-    {
-        title: "Apartment Management System",
-        description:
-            "During my internship, I built an apartment management website using React. It was my first real-world project, where I applied my knowledge and learned new concepts. I worked hard to make this website both functional and visually appealing.",
-        imageUrl: "apartment.jpg",
-        altText: "Apartment Management System",
-        click: "https://website-apartment-project.netlify.app/"
-
-    },
-    {
-        title: "Data Converter Table",
-        description:
-            "A React app where users can fill out a form and see the submitted data appear in a live-updating table. Helpful for learning state management and form handling.",
-        imageUrl: "D_Convertpng.png",
-        altText: "Form to Table App",
-        click: "https://firestore-crud-ts.web.app/"
-
-    },
-    {
-        title: "GNews Blog App",
-        description:
-            "A modern blog interface built using React and Axios. It fetches the latest headlines using the GNews API. Optimized for responsiveness and clean UI design.",
-        imageUrl: "GNews.png",
-        altText: "GNews Blog",
-        click: "https://blog-app-100-project.vercel.app/"
-    },
-
-    {
-        title: "Mini LMS (Learning Platform)",
-        description:
-            "This mini LMS displays YouTube course listings. On click, users are taken to the course page. Built with React, ideal for learners to organize their resources.",
-        imageUrl: "LMS.png",
-        altText: "Mini LMS",
-        click: "https://protfolio-personal.vercel.app/"
-    },
-
+  {
+    title: "AI Web Application",
+    description:
+      "Bootpress is a Web app built using React.js, Tailwind CSS, and Bootstrap, with Firebase Authentication for secure Google sign-in. It combines modern AI technologies with access control.",
+    imageUrl: "AI.jpg",
+    altText: "AI Web Application",
+    click: "https://bootpress-ai.vercel.app/",
+  },
+  {
+    title: "E-Commerce Platform - SkyMart",
+    description:
+      "An e-commerce platform built with React, Tailwind CSS, and Bootstrap. It allows users to browse products, add to cart, and favorite items.",
+    imageUrl: "skymart.png",
+    altText: "E-Commerce Platform",
+    click: "https://skytechmart.netlify.app/",
+  },
+  {
+    title: "Apartment Management System",
+    description:
+      "A React-based system to manage apartments, tenants, and expenses with responsive UI and clean layout.",
+    imageUrl: "apartment.jpg",
+    altText: "Apartment Management System",
+    click: "https://website-apartment-project.netlify.app/",
+  },
+  {
+    title: "Data Converter Table",
+    description:
+      "React app where users can fill a form and view it in a live-updating table. Demonstrates state management & CRUD basics.",
+    imageUrl: "D_Convertpng.png",
+    altText: "Form to Table App",
+    click: "https://firestore-crud-ts.web.app/",
+  },
+  {
+    title: "GNews Blog App",
+    description:
+      "A blog-style React app that fetches live headlines using the GNews API. Clean, fast, and responsive UI.",
+    imageUrl: "GNews.png",
+    altText: "GNews Blog",
+    click: "https://blog-app-100-project.vercel.app/",
+  },
+  {
+    title: "Mini LMS (Learning Platform)",
+    description:
+      "A simple LMS built with React to list and organize YouTube learning courses in one place.",
+    imageUrl: "LMS.png",
+    altText: "Mini LMS",
+    click: "https://protfolio-personal.vercel.app/",
+  },
 ];
 
-
 const Projects: React.FC = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
-    }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+  }, []);
 
-    return (
-        <div className="bg-[#0a0f1a] py-20 px-6 text-white">
-            <h1
-                data-aos="fade-up"
-                className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 text-center mb-12"
-            >
-                My Projects
-            </h1>
+  return (
+    <div
+      id="projects"
+      className="relative py-20 px-6 bg-[#0b0f17] text-white overflow-hidden"
+    >
+      {/* Background gradient overlay (same as home) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#0b0f17] to-[#001a1a]/60 opacity-80"></div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-                {projects.map((project, index) => (
-                    <div
-                        key={index}
-                        data-aos="zoom-in"
-                        className="bg-[#111827] rounded-xl p-4 shadow-lg hover:scale-105 transition-transform duration-300"
-                    >
-                        <a href={project.click} target="_blank" rel="noopener noreferrer">
+      {/* Title */}
+      <div className="relative z-10 text-center mb-16">
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] drop-shadow-[0_0_20px_rgba(0,255,200,0.3)]">
+          My Projects
+        </h1>
+        <p className="text-gray-400 mt-3">
+          Explore some of my best work built using modern technologies.
+        </p>
+      </div>
 
-                            <img
-                                src={project.imageUrl}
-                                alt={project.altText}
-                                className="rounded-md w-full h-40 object-cover mb-4"
-                            />
-                        </a>
-                        <h3 className="text-xl font-semibold text-cyan-400 mb-2">
-                            {project.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm">{project.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+      {/* Projects Grid */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            data-aos="fade-up"
+            className="group bg-[#0d141f]/80 backdrop-blur-xl border border-[#00b4d8]/20 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(0,180,216,0.3)] hover:shadow-[0_0_50px_rgba(127,255,0,0.4)] transition-all duration-500"
+          >
+            <a href={project.click} target="_blank" rel="noopener noreferrer">
+              <div className="overflow-hidden">
+                <img
+                  src={project.imageUrl}
+                  alt={project.altText}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* Gradient line bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#00b4d8] to-[#7fff00] opacity-80"></div>
+    </div>
+  );
 };
 
 export default Projects;

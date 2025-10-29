@@ -3,117 +3,124 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+/* 🌐 FRONTEND SKILLS */
 const frontendSkills = [
-    { name: "HTML", percent: 80, icon: "html-1.svg" },
-    { name: "CSS", percent: 70, icon: "css-3.svg" },
-    { name: "JavaScript", percent: 70, icon: "javascript-1.svg" },
-    { name: "Git", percent: 60, icon: "git-icon.svg" },
-    { name: "React.js", percent: 70, icon: "react-2.svg" },
-    { name: "Bootstrap", percent: 50, icon: "bootstrap-5-1.svg" },
-    { name: "TypeScript", percent: 70, icon: "typescript.svg" },
-    { name: "Tailwind CSS", percent: 50, icon: "tailwindcss.svg" },
-    { name: "PHP", percent: 30, icon: "PHP-logo.svg" },
+  { name: "HTML5", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "CSS3", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { name: "JavaScript (ES6+)", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "TypeScript", percent: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "React.js", percent: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "React Native", percent: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Next.js", percent: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "Tailwind CSS", percent: 90, icon: "tailwindcss.svg" },
+  { name: "Bootstrap", percent: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+  { name: "Sass", percent: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
+  { name: "Figma", percent: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
 ];
 
+/* ⚙️ BACKEND SKILLS */
 const backendSkills = [
-    { name: "Node.js", percent: 65, icon: "nodejs-icon.svg" },
-    { name: "Express.js", percent: 60, icon: "expresspng.png" },
-    { name: "MongoDB", percent: 70, icon: "mongodb-icon-1.svg" },
-    { name: "Postman", percent: 40, icon: "postman.svg" },
-    { name: "JWT Auth", percent: 40, icon: "pic_logo.svg" },
+  { name: "Node.js", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Express.js", percent: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+  { name: "MongoDB", percent: 70, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+  { name: "MySQL", percent: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "SQLite3", percent: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+  { name: "PHP", percent: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+  { name: "Java", percent: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+  { name: "Socket.io", percent: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" },
+  { name: "API Development", percent: 70, icon: "https://cdn-icons-png.flaticon.com/512/1605/1605350.png" },
+  { name: "Firebase", percent: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+  { name: "JWT Auth", percent: 70, icon: "https://cdn-icons-png.flaticon.com/512/6398/6398030.png" },
 ];
 
-const softSkills = [
-    { name: "Problem-Solving", percent: 80 },
-    { name: "Communication", percent: 80 },
-    { name: "Teamwork", percent: 70 },
-    { name: "Time Management", percent: 70 },
+/* 🧰 TOOLS & PLATFORM */
+const tools = [
+  { name: "Git & GitHub", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { name: "VS Code", percent: 95, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+  { name: "n8n Automation", percent: 70, icon: "https://avatars.githubusercontent.com/u/45487711?s=200&v=4" },
+  { name: "Postman", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+  { name: "Docker", percent: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { name: "Vercel", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" },
+  { name: "Netlify", percent: 85, icon: "https://cdn-icons-png.flaticon.com/512/873/873120.png" },
+  { name: "Figma", percent: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { name: "Firebase Console", percent: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
 ];
+
 
 const Skills = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: false });
-    }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
-    return (
-        <div className="min-h-screen bg-[#0a0f1a] text-white py-16 px-4">
-            <h1 className="text-center text-4xl md:text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">
-                My Skills
-            </h1>
+  const renderBar = (skill, color) => (
+    <div key={skill.name} className="flex items-center gap-3 mb-4">
+      <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
+      <span className="w-28 text-sm font-medium text-gray-200">{skill.name}</span>
+      <div className="w-full h-2 bg-[#1a1f2e] rounded">
+        <motion.div
+          className={`h-full rounded ${color}`}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${skill.percent}%` }}
+          transition={{ duration: 1 }}
+        />
+      </div>
+      <span className="text-xs text-gray-400">{skill.percent}%</span>
+    </div>
+  );
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-                {/* Frontend */}
-                <motion.div data-aos="fade-up" className="glassmorphism p-6 rounded-xl shadow-xl">
-                    <h2 className="text-2xl font-bold text-blue-400 mb-4">Frontend Skills</h2>
-                    {frontendSkills.map((skill, index) => (
-                        <div key={index} className="flex items-center gap-3 mb-4">
-                            <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-                            <span className="w-24 text-sm">{skill.name}</span>
-                            <div className="w-full h-2 bg-gray-700 rounded">
-                                <motion.div
-                                    className="h-full bg-blue-500"
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: `${skill.percent}%` }}
-                                    transition={{ duration: 1 }}
-                                />
-                            </div>
-                            <span className="text-xs">{skill.percent}%</span>
-                        </div>
-                    ))}
-                </motion.div>
+  return (
+    <div
+      id="skills"
+      className=" bg-[#0b0f17] text-white py-24 px-6 relative overflow-hidden"
+    >
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#0b0f17] to-[#001a1a]/60 opacity-80"></div>
 
-                {/* Backend */}
-                <motion.div data-aos="fade-up" className="glassmorphism p-6 rounded-xl shadow-xl">
-                    <h2 className="text-2xl font-bold text-green-400 mb-4">Backend Skills</h2>
-                    {backendSkills.map((skill, index) => (
-                        <div key={index} className="flex items-center gap-3 mb-4">
-                            <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-                            <span className="w-24 text-sm">{skill.name}</span>
-                            <div className="w-full h-2 bg-gray-700 rounded">
-                                <motion.div
-                                    className="h-full bg-green-500"
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: `${skill.percent}%` }}
-                                    transition={{ duration: 1 }}
-                                />
-                            </div>
-                            <span className="text-xs">{skill.percent}%</span>
-                        </div>
-                    ))}
-                </motion.div>
+      <div className="relative my-10 z-10 text-center mb-16">
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+          My Skills
+        </h1>
+        <p className="text-gray-300 mt-3">
+          A blend of creativity, logic, and technical expertise.
+        </p>
+      </div>
 
-                {/* Soft Skills */}
-                <motion.div data-aos="fade-up" className="glassmorphism p-6 rounded-xl shadow-xl text-center">
-                    <h2 className="text-2xl font-bold text-pink-400 mb-6">Soft Skills</h2>
-                    <div className="grid grid-cols-2 gap-6 justify-center">
-                        {softSkills.map((skill, index) => (
-                            <div key={index} className="flex flex-col items-center">
-                                <div className="relative w-24 h-24">
-                                    <svg className="absolute inset-0 w-full h-full">
-                                        <circle cx="50%" cy="50%" r="40%" stroke="gray" strokeWidth="6" fill="transparent" />
-                                        <motion.circle
-                                            cx="50%"
-                                            cy="50%"
-                                            r="40%"
-                                            stroke="cyan"
-                                            strokeWidth="6"
-                                            fill="transparent"
-                                            strokeDasharray="100"
-                                            strokeDashoffset="100"
-                                            animate={{ strokeDashoffset: 100 - skill.percent }}
-                                            transition={{ duration: 1 }}
-                                            strokeLinecap="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <span className="mt-3 text-xs font-semibold">{skill.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
-            </div>
-        </div>
-    );
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10">
+        {/* Frontend */}
+        <motion.div
+          data-aos="fade-up"
+          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 shadow-[0_0_25px_rgba(0,180,216,0.2)] hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
+        >
+          <h2 className="text-2xl font-bold text-[#7fff00] mb-4 text-center">
+            Frontend
+          </h2>
+          {frontendSkills.map((s) => renderBar(s, "bg-[#00b4d8]"))}
+        </motion.div>
+
+        {/* Backend */}
+        <motion.div
+          data-aos="fade-up"
+          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 shadow-[0_0_25px_rgba(0,180,216,0.2)] hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
+        >
+          <h2 className="text-2xl font-bold text-[#7fff00] mb-4 text-center">
+            Backend
+          </h2>
+          {backendSkills.map((s) => renderBar(s, "bg-[#7fff00]"))}
+        </motion.div>
+
+        {/* Tools */}
+        <motion.div
+          data-aos="fade-up"
+          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 shadow-[0_0_25px_rgba(0,180,216,0.2)] hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500 text-center"
+        >
+          <h2 className="text-2xl font-bold text-[#7fff00] mb-6">
+            Tools & Environment
+          </h2>
+          {tools.map((s) => renderBar(s, "bg-[#00b4d8]"))}
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
 export default Skills;
