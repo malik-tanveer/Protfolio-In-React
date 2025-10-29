@@ -18,7 +18,7 @@ function About() {
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left - Image */}
         <div className="md:w-1/2 flex justify-center" data-aos="fade-right">
-          <div className="relative w-72 h-72 rounded-full overflow-hidden border-[3px] border-[#00b4d8] shadow-[0_0_40px_rgba(0,180,216,0.4)] hover:shadow-[0_0_60px_rgba(127,255,0,0.5)] transition-all duration-500">
+          <div className="relative w-72 h-72 rounded-full overflow-hidden border-[3px] border-[#00b4d8] transition-all duration-500">
             <img
               src="197722550.jfif"
               alt="Tanveer"
@@ -29,7 +29,7 @@ function About() {
 
         {/* Right - Text */}
         <div className="md:w-1/2 text-center md:text-left" data-aos="fade-left">
-          <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] mb-6 drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+          <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] mb-6">
             About Me
           </h2>
 
@@ -79,7 +79,7 @@ function About() {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 bg-[#001a1a]/60 text-[#7fff00] border border-[#00b4d8]/40 rounded-lg shadow hover:shadow-[0_0_15px_rgba(127,255,0,0.3)] hover:scale-105 transition-all duration-300 text-sm font-semibold"
+                  className="px-3 py-1 bg-[#001a1a]/60 text-[#7fff00] border border-[#00b4d8]/40 rounded-lg hover:scale-105 transition-all duration-300 text-sm font-semibold"
                 >
                   {skill}
                 </span>
@@ -96,24 +96,12 @@ function About() {
               {["MongoDB", "MySQL", "SQLite3"].map((db) => (
                 <span
                   key={db}
-                  className="px-4 py-1 bg-[#001a1a]/60 text-[#00b4d8] border border-[#7fff00]/40 rounded-lg hover:shadow-[0_0_15px_rgba(0,255,200,0.3)] hover:scale-105 transition-all duration-300 font-semibold"
+                  className="px-4 py-1 bg-[#001a1a]/60 text-[#00b4d8] border border-[#7fff00]/40 rounded-lg hover:scale-105 transition-all duration-300 font-semibold"
                 >
                   {db}
                 </span>
               ))}
             </div>
-          </div>
-
-          {/* Professional Goals */}
-          <div className="mt-10">
-            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7fff00] to-[#00b4d8] mb-4">
-              Professional Goals
-            </h3>
-            <p className="text-gray-400 leading-relaxed">
-              My mission is to create modern digital solutions that blend
-              performance, innovation, and aesthetics — pushing the boundaries
-              of what’s possible in web development.
-            </p>
           </div>
         </div>
       </div>

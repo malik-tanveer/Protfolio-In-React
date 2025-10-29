@@ -46,17 +46,25 @@ const tools = [
   { name: "Firebase Console", percent: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
 ];
 
-
 const Skills = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
 
   const renderBar = (skill, color) => (
-    <div key={skill.name} className="flex items-center gap-3 mb-4">
-      <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-      <span className="w-28 text-sm font-medium text-gray-200">{skill.name}</span>
-      <div className="w-full h-2 bg-[#1a1f2e] rounded">
+    <div
+      key={skill.name}
+      className="flex items-center gap-3 mb-4 sm:mb-3 w-full"
+    >
+      <img
+        src={skill.icon}
+        alt={skill.name}
+        className="w-6 h-6 sm:w-5 sm:h-5 object-contain"
+      />
+      <span className="w-32 sm:w-28 text-sm sm:text-xs font-medium text-gray-200 truncate">
+        {skill.name}
+      </span>
+      <div className="flex-1 h-2 bg-[#1a1f2e] rounded overflow-hidden">
         <motion.div
           className={`h-full rounded ${color}`}
           initial={{ width: 0 }}
@@ -64,34 +72,36 @@ const Skills = () => {
           transition={{ duration: 1 }}
         />
       </div>
-      <span className="text-xs text-gray-400">{skill.percent}%</span>
     </div>
   );
 
   return (
     <div
       id="skills"
-      className=" bg-[#0b0f17] text-white py-24 px-6 relative overflow-hidden"
+      className="bg-[#0b0f17] text-white py-24 px-6 sm:px-4 relative overflow-hidden"
     >
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#0b0f17] to-[#001a1a]/60 opacity-80"></div>
 
-      <div className="relative my-10 z-10 text-center mb-16">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+      {/* Title Section */}
+      <div className="relative z-10 text-center mb-16">
+        <h1 className="text-5xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
           My Skills
         </h1>
-        <p className="text-gray-300 mt-3">
+        <p className="text-gray-300 mt-3 text-sm sm:text-xs">
           A blend of creativity, logic, and technical expertise.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10">
+      {/* Skills Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10">
         {/* Frontend */}
         <motion.div
           data-aos="fade-up"
-          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 shadow-[0_0_25px_rgba(0,180,216,0.2)] hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
+          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 
+          hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
         >
-          <h2 className="text-2xl font-bold text-[#7fff00] mb-4 text-center">
+          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-4 text-center">
             Frontend
           </h2>
           {frontendSkills.map((s) => renderBar(s, "bg-[#00b4d8]"))}
@@ -100,9 +110,10 @@ const Skills = () => {
         {/* Backend */}
         <motion.div
           data-aos="fade-up"
-          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 shadow-[0_0_25px_rgba(0,180,216,0.2)] hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
+          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 
+          hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
         >
-          <h2 className="text-2xl font-bold text-[#7fff00] mb-4 text-center">
+          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-4 text-center">
             Backend
           </h2>
           {backendSkills.map((s) => renderBar(s, "bg-[#7fff00]"))}
@@ -111,9 +122,10 @@ const Skills = () => {
         {/* Tools */}
         <motion.div
           data-aos="fade-up"
-          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 shadow-[0_0_25px_rgba(0,180,216,0.2)] hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500 text-center"
+          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 
+          hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
         >
-          <h2 className="text-2xl font-bold text-[#7fff00] mb-6">
+          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-6 text-center">
             Tools & Environment
           </h2>
           {tools.map((s) => renderBar(s, "bg-[#00b4d8]"))}

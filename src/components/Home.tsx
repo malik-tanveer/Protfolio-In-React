@@ -18,14 +18,19 @@ function Home() {
   };
 
   return (
-    <div className="home-container py-32 flex flex-col md:flex-row items-center justify-center px-8 bg-[#050b17] relative overflow-hidden">
+    <section
+      id="home"
+      className="relative flex flex-col lg:flex-row items-center justify-center px-6 sm:px-10 lg:px-16 py-24 sm:py-32 bg-[#050b17] overflow-hidden"
+    >
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/70 via-[#050b17] to-[#001a1a]/70 opacity-80"></div>
 
-      {/* Glowing Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#050b17] to-[#001a1a]/60 opacity-80"></div>
-
-      {/* Left Side - Text Section */}
-      <div className="md:w-1/2 text-center md:text-left z-10" data-aos="fade-right">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-green-400 to-pink-400 leading-tight drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+      {/* Left Side - Text */}
+      <div
+        className="relative z-10 w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start"
+        data-aos="fade-right"
+      >
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-green-400 to-pink-400 leading-tight drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
           Hi, I'm{" "}
           <TypeAnimation
             sequence={[
@@ -41,45 +46,51 @@ function Home() {
           />
         </h1>
 
-        <p className="mt-5 text-lg text-gray-300 max-w-lg">
-          Passionate about building high-performance web apps with modern technologies — from crafting interactive UIs to designing scalable backends.
+        <p className="mt-5 text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
+          Passionate about building high-performance web apps with modern
+          technologies — from crafting interactive UIs to designing scalable
+          backends.
           <br />
-          <span className="text-cyan-400 font-semibold">React</span>, <span className="text-green-400 font-semibold">Node.js</span>, and <span className="text-pink-400 font-semibold">MongoDB</span> are my playground.
+          <span className="text-cyan-400 font-semibold">React</span>,{" "}
+          <span className="text-green-400 font-semibold">Node.js</span>, and{" "}
+          <span className="text-pink-400 font-semibold">MongoDB</span> are my
+          playground.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col md:flex-row gap-6 mt-8 justify-center md:justify-start">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 justify-center lg:justify-start w-full sm:w-auto">
           <button
             onClick={handleDownload}
-            className="px-6 py-3 font-semibold text-black bg-gradient-to-r from-[#00b4d8] to-[#7fff00] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            className="px-6 py-3 text-sm sm:text-base font-semibold text-black bg-gradient-to-r from-[#00b4d8] to-[#7fff00] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
             data-aos="zoom-in"
           >
             Download Resume
           </button>
 
-          <button
-            className="px-6 py-3 font-semibold text-white border-2 border-[#00b4d8] rounded-lg hover:bg-[#00b4d8] hover:text-black transition-all duration-300"
+          <a
+            href="#contact"
+            className="px-6 py-3 text-sm sm:text-base font-semibold text-white border-2 border-[#00b4d8] rounded-lg hover:bg-[#00b4d8] hover:text-black transition-all duration-300 text-center"
             data-aos="zoom-in"
           >
-            <a href="#contact">Let's Collaborate</a>
-          </button>
+            Let's Collaborate
+          </a>
         </div>
       </div>
 
-      {/* Right Side - Profile Image */}
-      <div className="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-10" data-aos="fade-left">
-        <div className="relative w-80 h-80 rounded-full overflow-hidden border-[3px] border-[#00b4d8] shadow-[0_0_50px_rgba(0,180,216,0.4)] hover:shadow-[0_0_70px_rgba(127,255,0,0.6)] transition-all duration-500">
+      {/* Right Side - Image (No Shadow / No Glow) */}
+      <div
+        className="relative z-10 mt-12 lg:mt-0 flex justify-center lg:justify-end w-full lg:w-1/2"
+        data-aos="fade-left"
+      >
+        <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-[#00b4d8] transition-all duration-500">
           <img
             src="197722550.jfif"
             alt="Malik Tanveer - Full Stack Developer"
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
           />
         </div>
-
-        {/* Neon Glow Effect */}
-        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full opacity-10 blur-3xl animate-pulse"></div>
       </div>
-    </div>
+    </section>
   );
 }
 
