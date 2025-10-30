@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 
 function Home() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
+    AOS.init({ duration: 900, once: true, easing: "ease-in-out" });
   }, []);
 
   const handleDownload = () => {
@@ -20,10 +20,10 @@ function Home() {
   return (
     <section
       id="home"
-      className="relative flex flex-col lg:flex-row items-center justify-center px-6 sm:px-10 lg:px-16 py-24 sm:py-32 bg-[#050b17] overflow-hidden"
+      className="relative flex flex-col lg:flex-row items-center justify-center px-6 sm:px-10 lg:px-16 py-32 sm:py-40 bg-gradient-to-b from-[#020617] via-[#0b0f17] to-[#001a1a] overflow-hidden"
     >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/70 via-[#050b17] to-[#001a1a]/70 opacity-80"></div>
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00b4d8]/10 via-transparent to-[#7fff00]/10 blur-3xl"></div>
 
       {/* Left Side - Text */}
       <div
@@ -48,20 +48,18 @@ function Home() {
 
         <p className="mt-5 text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
           Passionate about building high-performance web apps with modern
-          technologies — from crafting interactive UIs to designing scalable
-          backends.
+          technologies — crafting interactive UIs, designing scalable backends.
           <br />
           <span className="text-cyan-400 font-semibold">React</span>,{" "}
           <span className="text-green-400 font-semibold">Node.js</span>, and{" "}
-          <span className="text-pink-400 font-semibold">MongoDB</span> are my
-          playground.
+          <span className="text-pink-400 font-semibold">MongoDB</span> are my playground.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 justify-center lg:justify-start w-full sm:w-auto">
           <button
             onClick={handleDownload}
-            className="px-6 py-3 text-sm sm:text-base font-semibold text-black bg-gradient-to-r from-[#00b4d8] to-[#7fff00] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            className="px-6 py-3 text-sm sm:text-base font-semibold text-black bg-gradient-to-r from-[#00b4d8] to-[#7fff00] rounded-lg shadow-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(127,255,0,0.5)] transition-transform duration-300"
             data-aos="zoom-in"
           >
             Download Resume
@@ -69,7 +67,7 @@ function Home() {
 
           <a
             href="#contact"
-            className="px-6 py-3 text-sm sm:text-base font-semibold text-white border-2 border-[#00b4d8] rounded-lg hover:bg-[#00b4d8] hover:text-black transition-all duration-300 text-center"
+            className="px-6 py-3 text-sm sm:text-base font-semibold text-white border-2 border-[#00b4d8] rounded-lg hover:bg-[#00b4d8]/30 hover:text-[#7fff00] transition-all duration-300 text-center"
             data-aos="zoom-in"
           >
             Let's Collaborate
@@ -77,19 +75,21 @@ function Home() {
         </div>
       </div>
 
-      {/* Right Side - Image (No Shadow / No Glow) */}
+      {/* Right Side - Image */}
       <div
         className="relative z-10 mt-12 lg:mt-0 flex justify-center lg:justify-end w-full lg:w-1/2"
         data-aos="fade-left"
       >
-        <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-[#00b4d8] transition-all duration-500">
+        <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-2 border-[#00b4d8]/40 
+                  transform rotate-3 hover:scale-105 hover:rotate-0 transition-all duration-500">
           <img
-            src="197722550.jfif"
+            src="unnamed.jpg"
             alt="Malik Tanveer - Full Stack Developer"
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover transition-transform duration-500"
           />
         </div>
       </div>
+
     </section>
   );
 }

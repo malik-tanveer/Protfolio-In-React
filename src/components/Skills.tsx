@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-/* 🌐 FRONTEND SKILLS */
 const frontendSkills = [
   { name: "HTML5", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS3", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
@@ -18,7 +17,6 @@ const frontendSkills = [
   { name: "Figma", percent: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
 ];
 
-/* ⚙️ BACKEND SKILLS */
 const backendSkills = [
   { name: "Node.js", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { name: "Express.js", percent: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
@@ -33,7 +31,6 @@ const backendSkills = [
   { name: "JWT Auth", percent: 70, icon: "https://cdn-icons-png.flaticon.com/512/6398/6398030.png" },
 ];
 
-/* 🧰 TOOLS & PLATFORM */
 const tools = [
   { name: "Git & GitHub", percent: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
   { name: "VS Code", percent: 95, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
@@ -48,23 +45,14 @@ const tools = [
 
 const Skills = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false });
+    AOS.init({ duration: 900, once: true });
   }, []);
 
   const renderBar = (skill, color) => (
-    <div
-      key={skill.name}
-      className="flex items-center gap-3 mb-4 sm:mb-3 w-full"
-    >
-      <img
-        src={skill.icon}
-        alt={skill.name}
-        className="w-6 h-6 sm:w-5 sm:h-5 object-contain"
-      />
-      <span className="w-32 sm:w-28 text-sm sm:text-xs font-medium text-gray-200 truncate">
-        {skill.name}
-      </span>
-      <div className="flex-1 h-2 bg-[#1a1f2e] rounded overflow-hidden">
+    <div key={skill.name} className="flex items-center gap-3 mb-4 sm:mb-3 w-full">
+      <img src={skill.icon} alt={skill.name} className="w-6 h-6 sm:w-5 sm:h-5 object-contain" />
+      <span className="w-32 sm:w-28 text-sm sm:text-xs font-medium text-gray-200 truncate">{skill.name}</span>
+      <div className="flex-1 h-2 bg-white/10 rounded overflow-hidden">
         <motion.div
           className={`h-full rounded ${color}`}
           initial={{ width: 0 }}
@@ -76,59 +64,36 @@ const Skills = () => {
   );
 
   return (
-    <div
-      id="skills"
-      className="bg-[#0b0f17] text-white py-24 px-6 sm:px-4 relative overflow-hidden"
-    >
-      {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#0b0f17] to-[#001a1a]/60 opacity-80"></div>
+    <div className="relative min-h-screen bg-gradient-to-b from-[#020617] via-[#0b0f17] to-[#001a1a] text-white py-24 px-6 sm:px-10 overflow-hidden">
+      
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00b4d8]/10 via-transparent to-[#7fff00]/10 blur-3xl"></div>
 
-      {/* Title Section */}
       <div className="relative z-10 text-center mb-16">
-        <h1 className="text-5xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00] drop-shadow-[0_0_15px_rgba(0,255,200,0.3)]">
+        <h1 className="text-5xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#7fff00]">
           My Skills
         </h1>
-        <p className="text-gray-300 mt-3 text-sm sm:text-xs">
+        <p className="text-gray-400 mt-3 text-base sm:text-sm">
           A blend of creativity, logic, and technical expertise.
         </p>
       </div>
 
-      {/* Skills Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10">
         {/* Frontend */}
-        <motion.div
-          data-aos="fade-up"
-          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 
-          hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
-        >
-          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-4 text-center">
-            Frontend
-          </h2>
-          {frontendSkills.map((s) => renderBar(s, "bg-[#00b4d8]"))}
+        <motion.div data-aos="fade-up" className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500">
+          <h2 className="text-2xl sm:text-xl font-bold text-cyan-400 mb-6 text-center">Frontend</h2>
+          {frontendSkills.map((s) => renderBar(s, "bg-cyan-400"))}
         </motion.div>
 
         {/* Backend */}
-        <motion.div
-          data-aos="fade-up"
-          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 
-          hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
-        >
-          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-4 text-center">
-            Backend
-          </h2>
+        <motion.div data-aos="fade-up" className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500">
+          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-6 text-center">Backend</h2>
           {backendSkills.map((s) => renderBar(s, "bg-[#7fff00]"))}
         </motion.div>
 
         {/* Tools */}
-        <motion.div
-          data-aos="fade-up"
-          className="p-6 rounded-2xl bg-[#0f1624]/80 border border-[#00b4d8]/30 
-          hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500"
-        >
-          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-6 text-center">
-            Tools & Environment
-          </h2>
-          {tools.map((s) => renderBar(s, "bg-[#00b4d8]"))}
+        <motion.div data-aos="fade-up" className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:shadow-[0_0_40px_rgba(127,255,0,0.3)] transition-all duration-500">
+          <h2 className="text-2xl sm:text-xl font-bold text-[#7fff00] mb-6 text-center">Tools & Environment</h2>
+          {tools.map((s) => renderBar(s, "bg-cyan-400"))}
         </motion.div>
       </div>
     </div>

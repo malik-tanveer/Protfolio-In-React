@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#0b0f19]/70 backdrop-blur-lg border-b border-gray-800 px-6 py-4 z-50 shadow-md">
+    <nav className="fixed top-0 left-0 w-full bg-[#0b0f17]/70 backdrop-blur-lg border-b border-cyan-700/20 px-6 py-4 z-50 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center space-x-2">
@@ -58,9 +58,7 @@ const Navbar = () => {
                 offset={-70}
                 activeClass="text-white"
                 className={`transition-all duration-300 cursor-pointer ${
-                  activeTab === item.id
-                    ? "text-white"
-                    : "hover:text-cyan-400"
+                  activeTab === item.id ? "text-white" : "hover:text-cyan-400"
                 }`}
                 onSetActive={() => setActiveTab(item.id)}
               >
@@ -89,7 +87,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 80 }}
-            className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-[#0b0f19] to-[#141a2a] border-r border-gray-800 py-10 px-8 z-40 shadow-2xl"
+            className="fixed top-0 left-0 h-screen w-64 bg-[#0b0f17]/90 border-r border-cyan-700/20 py-10 px-8 z-40 shadow-2xl backdrop-blur-md"
           >
             <ul className="text-gray-200 text-xl space-y-8">
               {menuItems.map((item) => (
@@ -102,9 +100,7 @@ const Navbar = () => {
                     offset={-70}
                     activeClass="text-white"
                     className={`block transition-all duration-300 ${
-                      activeTab === item.id
-                        ? "text-white"
-                        : "hover:text-cyan-400"
+                      activeTab === item.id ? "text-white" : "hover:text-cyan-400"
                     }`}
                     onClick={() => {
                       setActiveTab(item.id);

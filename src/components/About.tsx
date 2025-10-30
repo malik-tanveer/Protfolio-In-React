@@ -4,28 +4,36 @@ import "aos/dist/aos.css";
 
 function About() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
+    AOS.init({ duration: 900, once: true, easing: "ease-in-out" });
   }, []);
 
+  const skills = [
+    "HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "React Native",
+    "Next.js", "Node.js", "Express.js", "MongoDB", "MySQL", "Firebase",
+    "PHP", "Java", "Tailwind CSS", "Sass", "Bootstrap", "Postman", "Git & GitHub", "Figma"
+  ];
+
+  const databases = ["MongoDB", "MySQL", "SQLite3"];
+
   return (
-    <div
-      className="about-container py-32 px-8 bg-[#0b0f17] relative overflow-hidden"
-      id="about"
-    >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001a1a]/60 via-[#0b0f17] to-[#001a1a]/60 opacity-80"></div>
+    <div className="relative min-h-screen bg-gradient-to-b from-[#020617] via-[#0b0f17] to-[#001a1a] text-white py-32 px-6 sm:px-10 overflow-hidden" id="about">
+      
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00b4d8]/10 via-transparent to-[#7fff00]/10 blur-3xl"></div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left - Image */}
         <div className="md:w-1/2 flex justify-center" data-aos="fade-right">
-          <div className="relative w-72 h-72 rounded-full overflow-hidden border-[3px] border-[#00b4d8] transition-all duration-500">
-            <img
-              src="197722550.jfif"
-              alt="Tanveer"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+  <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-[3px] border-[#00b4d8]/40
+                  transform -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500">
+    <img
+      src="197722550.jfif"
+      alt="Tanveer"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
+
 
         {/* Right - Text */}
         <div className="md:w-1/2 text-center md:text-left" data-aos="fade-left">
@@ -34,15 +42,8 @@ function About() {
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            I'm <span className="text-[#7fff00] font-semibold">Tanveer</span>, a
-            passionate{" "}
-            <span className="text-[#00b4d8] font-semibold">
-              Full Stack MERN Developer
-            </span>{" "}
-            who loves turning complex problems into elegant, scalable digital
-            solutions. From designing stunning interfaces to building secure,
-            high-performance backends — I strive to deliver impactful web
-            experiences that connect technology with creativity.
+            I'm <span className="text-[#7fff00] font-semibold">Tanveer</span>, a passionate{" "}
+            <span className="text-[#00b4d8] font-semibold">Full Stack MERN Developer</span> who loves turning complex problems into elegant, scalable solutions. From stunning interfaces to secure backends, I deliver impactful web experiences that blend creativity and technology.
           </p>
 
           {/* Core Expertise */}
@@ -51,35 +52,13 @@ function About() {
               Core Expertise
             </h3>
             <p className="text-gray-400 mb-6">
-              Building responsive UIs, real-time APIs, authentication systems,
-              and RESTful services with modern technologies.
+              Building responsive UIs, real-time APIs, authentication systems, and RESTful services using modern tech.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
-              {[
-                "HTML5",
-                "CSS3",
-                "JavaScript",
-                "TypeScript",
-                "React.js",
-                "React Native",
-                "Next.js",
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-                "MySQL",
-                "Firebase",
-                "PHP",
-                "Java",
-                "Tailwind CSS",
-                "Sass",
-                "Bootstrap",
-                "Postman",
-                "Git & GitHub",
-                "Figma",
-              ].map((skill) => (
+              {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 bg-[#001a1a]/60 text-[#7fff00] border border-[#00b4d8]/40 rounded-lg hover:scale-105 transition-all duration-300 text-sm font-semibold"
+                  className="px-3 py-1 bg-white/5 text-[#7fff00] border border-[#00b4d8]/30 rounded-lg hover:scale-105 hover:bg-white/10 transition-all duration-300 text-sm font-semibold"
                 >
                   {skill}
                 </span>
@@ -93,10 +72,10 @@ function About() {
               Databases
             </h3>
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              {["MongoDB", "MySQL", "SQLite3"].map((db) => (
+              {databases.map((db) => (
                 <span
                   key={db}
-                  className="px-4 py-1 bg-[#001a1a]/60 text-[#00b4d8] border border-[#7fff00]/40 rounded-lg hover:scale-105 transition-all duration-300 font-semibold"
+                  className="px-4 py-1 bg-white/5 text-[#00b4d8] border border-[#7fff00]/40 rounded-lg hover:scale-105 hover:bg-white/10 transition-all duration-300 font-semibold"
                 >
                   {db}
                 </span>
