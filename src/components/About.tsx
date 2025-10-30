@@ -17,22 +17,22 @@ function About() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#020617] via-[#0b0f17] to-[#001a1a] text-white py-32 px-6 sm:px-10 overflow-hidden" id="about">
-      
+
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#00b4d8]/10 via-transparent to-[#7fff00]/10 blur-3xl"></div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left - Image */}
         <div className="md:w-1/2 flex justify-center" data-aos="fade-right">
-  <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-[3px] border-[#00b4d8]/40
+          <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-[3px] border-[#00b4d8]/40
                   transform -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500">
-    <img
-      src="197722550.jfif"
-      alt="Tanveer"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
+            <img
+              src="197722550.jfif"
+              alt="Tanveer"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
 
         {/* Right - Text */}
