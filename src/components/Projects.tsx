@@ -6,83 +6,77 @@ import { ExternalLink, Code, Github } from "lucide-react";
 interface Project {
   title: string;
   description: string;
-  image: string; 
   link: string;
   github: string;
 }
 
 const projects: Project[] = [
   {
-    title: "AI Web Application",
-    description: "An AI-powered web app built using React, Tailwind, and Firebase Authentication with smooth UI/UX.",
-    image: "AI.jpg",
-    link: "https://bootpress-ai.vercel.app/",
-    github: "https://github.com/malik-tanveer/AI-Web-App"
-  },
-  // {
-  //   title: "E-Commerce Platform - SkyMart",
-  //   description: "A stylish e-commerce platform featuring product browsing, favorites, and cart management.",
-  //   image: "skymart.png",
-  //   link: "https://skytechmart.netlify.app/",
-  //   github: "#"
-  // },
-  {
     title: "Apartment Management System",
-    description: "A complete system to manage tenants, rent, and utilities. Clean UI + intuitive dashboard.",
-    image: "apartment.jpg",
+    description:
+      "A complete apartment management platform for handling tenants, rent records, and utility tracking. Features include role-based workflow, structured data handling, and a clean, intuitive dashboard experience.",
     link: "https://website-apartment-project.netlify.app/",
-    github: "#"
-  },
-  {
-    title: "Data Converter Table",
-    description: "React + Firestore CRUD app converting form data into live dynamic tables.",
-    image: "D_Convertpng.png",
-    link: "https://firestore-crud-ts.web.app/",
-    github: "https://github.com/malik-tanveer/Data_Convert_Table"
+    github: "https://github.com/malik-tanveer/Apartment-Website",
   },
   {
     title: "GNews Blog App",
-    description: "Live headlines with category filtering powered by GNews API and React.",
-    image: "GNews.png",
+    description:
+      "A modern news and blog platform displaying live headlines with category-based filtering. Built with React and GNews API, focusing on fast rendering, clean UI, and smooth browsing experience.",
     link: "https://blog-app-100-project.vercel.app/",
-    github: "https://github.com/malik-tanveer/Blog-App"
+    github: "https://github.com/malik-tanveer/Blog-App",
   },
   {
     title: "Mini LMS Platform",
-    description: "A small-scale LMS for YouTube tutorials with organized playlists and clean UI.",
-    image: "LMS.png",
+    description:
+      "A lightweight LMS designed for learning content and playlists. Includes structured lesson organization, modular components, and a user-friendly learning interface.",
     link: "#",
     github: "https://github.com/malik-tanveer/MERN_Stack_Project",
   },
   {
-    title: "Portfolio Website",
-    description: "My personal portfolio showcasing full-stack skills with animations and responsiveness.",
-    image: "portfolio.png",
-    link: "https://protfolio-personal.vercel.app/",
-    github: "https://github.com/malik-tanveer/Protfolio-In-React",
-  },
-  {
     title: "Movie App",
-    description: "A sleek movie browsing web app showing trending, popular, and search functionality.",
-    image: "movie.png",
-    link: "movie-six-sand.vercel.app/", // agar koi live demo hai to yaha daal do
+    description:
+      "A sleek movie discovery app with trending, popular, and search functionality. Built with modern UI patterns, optimized API handling, and responsive design for a smooth user experience.",
+    link: "https://movie-six-sand.vercel.app/",
     github: "https://github.com/malik-tanveer/Movie",
   },
   {
-    title: "CryptoView",
-    description: "Track cryptocurrencies live with price charts, trending coins, and market data.",
-    image: "crypto.png",
-    link: "crypto-view-ruddy.vercel.app", // live demo agar available hai
-    github: "https://github.com/malik-tanveer/CryptoView",
-  },
-  {
     title: "Web-Ramdan",
-    description: "A web app for Ramadan with prayer times, daily reminders, and inspirational content.",
-    image: "ramdan.png",
-    link: "web-ramdan.vercel.app", // live demo agar available hai
+    description:
+      "A Ramadan companion web app featuring prayer time tracking, daily reminders, and Islamic learning content — designed to support users with a meaningful daily workflow experience.",
+    link: "https://web-ramdan.vercel.app/",
     github: "https://github.com/malik-tanveer/Web-Ramdan",
   },
+  {
+    title: "Micro-Learning Quiz Platform",
+    description:
+      "An interactive quiz platform that helps learners study through short, bite-sized quizzes. Includes progress-driven workflow, Firebase authentication, and real-time database support.",
+    link: "https://micro-quiz-8c7fd.web.app",
+    github: "https://github.com/malik-tanveer/Micro-Learning"
+  },
+  {
+    title: "Expense Tracker Dashboard",
+    description:
+      "A finance tracking dashboard for managing daily expenses with charts and transaction insights. Focused on clean UX, real-time updates, and structured financial visualization.",
+    link: "https://expense-tracker-5c.web.app/",
+    github: "https://github.com/malik-tanveer/Expense-tracker-app"
+  },
+  {
+    title: "Freelance Project Manager",
+    description:
+      "A project management tool for freelancers to organize clients, tasks, and deliverables. Designed with productivity-focused UI, modular components, and scalable Firebase backend.",
+    link: "https://freelance-project-manage-c1.firebaseapp.com/",
+    github: "https://github.com/malik-tanveer/Freelance_Project_Manager"
+  },
+  {
+    title: "Event Planner App",
+    description:
+      "An event planning and scheduling web app for creating, organizing, and managing events efficiently. Includes real-time updates, structured event workflows, and modern UI design.",
+    link: "https://event-spark-80.lovable.app/",
+    github: "https://github.com/malik-tanveer/event-spark-80"
+  }
 ];
+
+
 
 const ProjectsGrid: React.FC = () => {
   useEffect(() => {

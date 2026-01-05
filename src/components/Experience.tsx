@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Briefcase, Code2, Rocket } from "lucide-react"; // icons
+import { Briefcase, Code2, Rocket } from "lucide-react";
+import { JSX } from "react/jsx-runtime";
 
 interface Project {
   name: string;
@@ -48,47 +49,87 @@ const Experience: React.FC = () => {
       ],
       icon: <Briefcase className="w-8 h-8 text-cyan-400" />,
     },
-    
+
     {
-  company: "Personal Projects",
-  role: "Full Stack Developer",
-  duration: "May 2025 – Jul 2025",
+      company: "Personal Projects",
+      role: "Full Stack Developer",
+      duration: "May 2025 – Jul 2025",
+      description:
+        "Built advanced projects integrating React, Node.js, MongoDB, and Firebase. Focused on learning by solving practical UI/UX and backend challenges.",
+      projects: [
+        {
+          name: "LMS Platform",
+          details:
+            "Full-stack LMS with authentication, course modules, and dashboard.",
+        },
+        {
+          name: "Blog App",
+          details:
+            "Dynamic frontend app fetching live API data with search & filters.",
+        },
+        {
+          name: "Expense Tracker App",
+          details:
+            "Track personal expenses with add/edit/delete functionality and charts for analytics.",
+        },
+        {
+          name: "Micro Learning",
+          details:
+            "Short, interactive learning modules for quick skill acquisition.",
+        },
+        {
+          name: "Event Management",
+          details:
+            "Manage events, RSVPs, and schedules with a user-friendly interface.",
+        },
+        {
+          name: "Study Management",
+          details:
+            "Organize courses, study plans, and track progress efficiently.",
+        },
+      ],
+      icon: <Rocket className="w-8 h-8 text-green-400" />,
+    },
+ {
+  company: "Aykays Digital Agency",
+  role: "Frontend Developer Intern",
+  duration: "Aug 2025 – Oct 2025",
   description:
-    "Built advanced projects integrating React, Node.js, MongoDB, and Firebase. Focused on learning by solving practical UI/UX and backend challenges.",
+    "Completed a 3-month internship focused on practical frontend development using React, Firebase, and Firestore. Worked on real-world projects, built responsive and user-friendly interfaces, and followed clean, maintainable coding practices while collaborating in a structured development workflow.",
+  
   projects: [
     {
-      name: "LMS Platform",
+      name: "Smart Study Planner & Focus Tracker",
       details:
-        "Full-stack LMS with authentication, course modules, and dashboard.",
+        "Built a productivity platform for students with task scheduling, study tracking, and real-time progress analytics using Firebase Auth, Firestore, and Chart.js."
     },
     {
-      name: "Blog App",
+      name: "Micro-Learning Quiz Platform",
       details:
-        "Dynamic frontend app fetching live API data with search & filters.",
+        "Developed an interactive learning system with topic-based quizzes, score tracking, and secure user authentication using React, TypeScript, and Firebase."
     },
     {
-      name: "Expense Tracker App",
+      name: "ExpenseInsight — Personal Finance Dashboard",
       details:
-        "Track personal expenses with add/edit/delete functionality and charts for analytics.",
+        "Designed a finance dashboard with category-wise expense tracking, monthly reports, and visual analytics to help users manage spending behavior effectively."
     },
     {
-      name: "Micro Learning",
+      name: "ProjectFlow — Freelance Project Manager",
       details:
-        "Short, interactive learning modules for quick skill acquisition.",
+        "Created a project management tool to organize client tasks, deadlines, and deliverables with role-based access and data persistence using Firestore."
     },
     {
-      name: "Event Management",
+      name: "EventSphere — Event Planning & Scheduling App",
       details:
-        "Manage events, RSVPs, and schedules with a user-friendly interface.",
-    },
-    {
-      name: "Study Management",
-      details:
-        "Organize courses, study plans, and track progress efficiently.",
-    },
+        "Developed an event planning application with schedule management, reminders, and participant tracking, ensuring responsive UI and smooth user experience."
+    }
   ],
-  icon: <Rocket className="w-8 h-8 text-green-400" />,
+
+  icon: <Briefcase className="w-8 h-8 text-cyan-400" />,
 }
+
+
+
   ];
 
   return (
@@ -115,9 +156,8 @@ const Experience: React.FC = () => {
           <div
             key={index}
             data-aos="fade-up"
-            className={`flex flex-col md:flex-row items-center gap-8 ${
-              index % 2 === 0 ? "md:flex-row-reverse" : ""
-            }`}
+            className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
           >
             {/* Connector Line */}
             <div className="hidden md:block w-1 bg-gradient-to-b from-[#00b4d8] to-[#7fff00] h-60 rounded-full opacity-60"></div>

@@ -10,8 +10,8 @@ function Home() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Tanveer-FullStack-Resume.pdf";
-    link.download = "Malik-Tanveer-FullStack-Resume.pdf";
+    link.href = "/Tanveer.pdf";
+    link.download = "tanveer-FullStack-Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

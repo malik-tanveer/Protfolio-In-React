@@ -1,16 +1,6 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  FaTwitter,
-  FaInstagram,
-  FaFacebookF,
-  FaLinkedin,
-  FaGithub,
-  FaDiscord,
-  FaTelegramPlane,
-  FaWhatsapp,
-} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BiPhone } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
@@ -38,11 +28,11 @@ const Contact = () => {
       .send("service_yvmnabr", "template_59c1u8i", formData, "KGCAozw0toGIzG0tq")
       .then(
         () => {
-          alert("✅ Message sent successfully!");
+          alert("Message sent successfully!");
           setFormData({ name: "", email: "", subject: "", message: "" });
         },
         () => {
-          alert("❌ Failed to send message. Please try again.");
+          alert("Failed to send message. Please try again.");
         }
       );
   };
@@ -90,21 +80,6 @@ const Contact = () => {
               +92 357048768
             </a>
           </p>
-        </div>
-
-        {/* Social Media Icons */}
-        <div className="flex justify-center md:justify-start gap-5 mt-8 flex-wrap">
-          {[FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaDiscord, FaTelegramPlane, FaWhatsapp].map((Icon, index) => (
-            <a
-              key={index}
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 text-3xl transition-transform transform hover:scale-110"
-            >
-              <Icon />
-            </a>
-          ))}
         </div>
       </div>
       {/* Contact Form */}

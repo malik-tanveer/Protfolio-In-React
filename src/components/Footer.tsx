@@ -14,20 +14,17 @@ import {
 import { SiLeetcode, SiGmail } from "react-icons/si";
 
 const Footer: React.FC = () => {
-  // Icons + Links mapping
   const socialLinks: { icon: React.ElementType; url: string }[] = [
     { icon: FaGithub, url: "https://github.com/malik-tanveer" },
     { icon: FaLinkedin, url: "https://www.linkedin.com/in/malik-tanveer-342388349" },
     { icon: FaTwitter, url: "https://x.com/malikTanveer321" },
     { icon: FaInstagram, url: "https://www.instagram.com/youloos477" },
-    { icon: FaFacebookF, url: "https://www.facebook.com/share/1Ba9h4vMW1/" },
-    { icon: FaDiscord, url: "discord.gg/https://discord.gg/trkPVKjY" },
+    { icon: FaFacebookF, url: "https://www.facebook.com/profile.php?id=61569362753063" },
+    { icon: FaDiscord, url: "https://discord.gg/trkPVKjY" },
     { icon: FaTelegramPlane, url: "http://t.me/Malikkhanawan" },
     { icon: FaWhatsapp, url: "https://wa.me/92357048768" },
-    { icon: FaYoutube, url: "https://www.youtube.com/" },
-    { icon: SiLeetcode, url: "https://www.leetcode.com/https://leetcode.com/u/kubuz2edzs" },
-    // { icon: FaDev, url: "https://dev.to/" },
-    { icon: SiGmail, url: "mailto:Youloos477@gmail.com" },
+    { icon: SiLeetcode, url: "https://leetcode.com/u/kubuz2edzs/" },
+    { icon: SiGmail, url: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Youloos477@gmail.com" },
   ];
 
   return (
@@ -61,9 +58,8 @@ const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Copyright */}
         <p className="text-xs text-gray-500 mt-3">
-          © 2025 All Rights Reserved | Crafted with ❤️ using React & Tailwind CSS
+          © 2026 All Rights Reserved 
         </p>
       </div>
     </footer>
