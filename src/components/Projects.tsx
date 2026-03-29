@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     title: "Web-Ramdan",
     description:
-      "A Ramadan companion web app featuring prayer time tracking, daily reminders, and Islamic learning content — designed to support users with a meaningful daily workflow experience.",
+      "A Ramadan companion web app featuring prayer time tracking, daily reminders, and Islamic learning content designed to support users with a meaningful daily workflow experience.",
     link: "https://web-ramdan.vercel.app/",
     github: "https://github.com/malik-tanveer/Web-Ramdan",
   },

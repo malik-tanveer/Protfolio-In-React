@@ -48,7 +48,7 @@ function Home() {
 
         <p className="mt-5 text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
           Passionate about building high-performance web apps with modern
-          technologies — crafting interactive UIs, designing scalable backends.
+          technologies crafting interactive UIs, designing scalable backends.
           <br />
           <span className="text-cyan-400 font-semibold">React</span>,{" "}
           <span className="text-green-400 font-semibold">Node.js</span>, and{" "}

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { MdEmail } from "react-icons/md";
-import { BiPhone } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -56,7 +55,7 @@ const Contact = () => {
           </span>
         </h2>
         <p className="text-gray-300 mb-8 max-w-md mx-auto md:mx-0">
-          Have a question or want to collaborate? Drop me a message — I’ll reply
+          Have a question or want to collaborate? Drop me a message I’ll reply
           as soon as possible!
         </p>
 
@@ -71,15 +70,7 @@ const Contact = () => {
               Youloos477@gmail.com
             </a>
           </p>
-          <p className="flex justify-center md:justify-start items-center gap-3 text-white">
-            <BiPhone className="text-2xl text-cyan-400" />
-            <a
-              href="tel:+92357048768"
-              className="hover:text-cyan-400 transition-all"
-            >
-              +92 357048768
-            </a>
-          </p>
+         
         </div>
       </div>
       {/* Contact Form */}

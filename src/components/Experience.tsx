@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Briefcase, Code2, Rocket } from "lucide-react";
+import { Briefcase, Rocket } from "lucide-react";
 import { JSX } from "react/jsx-runtime";
 
 interface Project {
@@ -109,17 +109,17 @@ const Experience: React.FC = () => {
         "Developed an interactive learning system with topic-based quizzes, score tracking, and secure user authentication using React, TypeScript, and Firebase."
     },
     {
-      name: "ExpenseInsight — Personal Finance Dashboard",
+      name: "ExpenseInsight Personal Finance Dashboard",
       details:
         "Designed a finance dashboard with category-wise expense tracking, monthly reports, and visual analytics to help users manage spending behavior effectively."
     },
     {
-      name: "ProjectFlow — Freelance Project Manager",
+      name: "ProjectFlow Freelance Project Manager",
       details:
         "Created a project management tool to organize client tasks, deadlines, and deliverables with role-based access and data persistence using Firestore."
     },
     {
-      name: "EventSphere — Event Planning & Scheduling App",
+      name: "EventSphere Event Planning & Scheduling App",
       details:
         "Developed an event planning application with schedule management, reminders, and participant tracking, ensuring responsive UI and smooth user experience."
     }

@@ -2,29 +2,16 @@ import React from "react";
 import {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-  FaFacebookF,
-  FaDiscord,
   FaTelegramPlane,
-  FaWhatsapp,
-  FaYoutube,
-  FaDev,
 } from "react-icons/fa";
-import { SiLeetcode, SiGmail } from "react-icons/si";
+import {  SiGmail } from "react-icons/si";
 
 const Footer: React.FC = () => {
   const socialLinks: { icon: React.ElementType; url: string }[] = [
     { icon: FaGithub, url: "https://github.com/malik-tanveer" },
-    { icon: FaLinkedin, url: "https://www.linkedin.com/in/malik-tanveer-342388349" },
-    { icon: FaTwitter, url: "https://x.com/malikTanveer321" },
-    { icon: FaInstagram, url: "https://www.instagram.com/youloos477" },
-    { icon: FaFacebookF, url: "https://www.facebook.com/profile.php?id=61569362753063" },
-    { icon: FaDiscord, url: "https://discord.gg/trkPVKjY" },
+    { icon: FaLinkedin, url: "https://www.linkedin.com/in/malik-tanveer-8bbaa13b2/" },
     { icon: FaTelegramPlane, url: "http://t.me/Malikkhanawan" },
-    { icon: FaWhatsapp, url: "https://wa.me/92357048768" },
-    { icon: SiLeetcode, url: "https://leetcode.com/u/kubuz2edzs/" },
-    { icon: SiGmail, url: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Youloos477@gmail.com" },
+    { icon: SiGmail, url: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=mtanveerdev.33@gmail.com" },
   ];
 
   return (
@@ -51,7 +38,7 @@ const Footer: React.FC = () => {
         {/* Name / Tagline */}
         <div>
           <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
-            Malik Tanveer — Full Stack (MERN) Developer
+            Malik Tanveer  Full Stack (MERN) Developer
           </h2>
           <p className="text-gray-400 mt-1 text-sm">
             Building Modern Web Experiences with Passion
